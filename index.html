@@ -13,76 +13,339 @@
 <body onload="PR.prettyPrint()">
     <main id="main-doc">
         <nav id="navbar">
-            <h1 class="title">JavaScript</h1>
+            <header class="title">JavaScript</header>
             <ul>
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#CSS_basics">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#Reference">Reference</a></li>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+                <li><a class="nav-link" href="#Comments">Comments</a></li>
+                <li><a class="nav-link" href="#Variables">Variables</a></li>
+                <li><a class="nav-link" href="#Declaring_variables">Declaring variables</a></li>
+                <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+                <li><a class="nav-link" href="#Variable_hoisting">Variable hoisting</a></li>
+                <li><a class="nav-link" href="#Function_hoisting">Function hoisting</a></li>
+                <li><a class="nav-link" href="#Global_variables">Global variables</a></li>
+                <li><a class="nav-link" href="#Constants">Constants</a></li>
+                <li><a class="nav-link" href="#Data_types">Data types</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
             </ul>
         </nav>
 
         <div class="content">
-
-
-            <!-- NEED AT LEAST 5 SECTIONS LIKE THE SECTION BELLOW-->
             <section class="main-section" id="Introduction">
                 <header>Introduction</header>
                 <p>
-                    <strong>Cascading Style Sheets (CSS)</strong> is a stylesheet language
-                    used to describe the presentation of a document written in HTML or
-                    XML (including XML dialects such as SVG, MathML or XHTML). CSS describes 
-                    how elements should be rendered on screen, on paper, in speech, or on other media.
+                    JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+                    (e.g. having
+                    complex animations, clickable buttons, popup menus, etc.). There are also more advanced server side
+                    versions of
+                    JavaScript such as Node.Js which allow you to add more functionality to a website than simply
+                    downloading files (such as
+                    realtime collaboration between multiple computers). Inside a host environment (for example, a web
+                    browser), JavaScript
+                    can be connected to the objects of its environment to provide programmatic control over them.
                 </p>
                 <p>
-                    CSS is one of the core languages of the <storng>open Web</storng> and is standardized across Web browsers according to the W3C
-                    specification. Developed in levels, CSS1 is now obsolete, CSS2.1 is a recommendation, and CSS3, now split into smaller
-                    modules, is progressing on the standardization track.
-                </p>
-                <p>JavaScript contains a standard library of objects, such as
-                    <code>Array</code>,
-                    <code>Date</code>, and
-                    <code>Math</code>, and a core set of language elements such as operators, control structures, and
-                    statements.
-                    Core JavaScript can be extended for a variety of purposes by supplementing it with additional
-                    objects; for example:
+                    JavaScript contains a standard library of objects, such as <code>Array</code>, <code>Date</code>,
+                    and <code>Math</code>, and a core set of language elements
+                    such as operators, control structures, and statements. Core JavaScript can be extended for a variety
+                    of purposes by
+                    supplementing it with additional objects; for example:
                 </p>
                 <ul>
-                    <li class="list"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN
-                            JavaScript
-                            Guide</a>
+                    <li class="list">
+                        <em><strong>Client-side JavaScript</strong></em> extends the core language by supplying objects
+                        to control a browser and its Document Object Model
+                        (DOM). For example, client-side extensions allow an application to place elements on an HTML
+                        form and respond to user
+                        events such as mouse clicks, form input, and page navigation.
+                    </li>
+                    <li class="list">
+                        <em><strong>Server-side JavaScript</strong></em> extends the core language by supplying objects
+                        relevant to running JavaScript on a server. For
+                        example, server-side extensions allow an application to communicate with a database, provide
+                        continuity of information
+                        from one invocation to another of the application, or perform file manipulations on a server.
                     </li>
                 </ul>
-                <div class="code">
-                    <pre class="prettyprint linenums">
-p {
-color: red;
-}
-                    </pre>
-                </div>
+                <p>
+                    This means that in the browser, JavaScript can change the way the webpage (DOM) looks. And,
+                    likewise, Node.js JavaScript
+                    on the server can respond to custom requests from code written in the browser.
+                </p>
             </section>
-
-
-            <section class="main-section" id="Reference">
-                <header>Reference</header>
-                <p class="paragraphs">
-                    The data contained in this page are a copy of the content on these sites below:
+            <section class="main-section" id="Hello_World">
+                <header>Hello World</header>
+                <p>
+                    To be able to write the “Hello, World!” program, first, you need to have a program that compiles
+                    ("understands")
+                    JavaScript. For this task, we can use web browsers console. To learn more about
+                    it, you can read our tutorial <a
+                        href="https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-developer-console"
+                        target="_blank">“How
+                        To Use the JavaScript Developer Console.”</a>
                 </p>
-                <ul>
-                    <li class="list"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN
-                            JavaScript Guide</a>
-                    </li>
-                </ul>
+                <div class="code">
+                    <pre class="prettyprint linenums">console.log("Hello, World!");</pre>
+                </div>
+                <p>Once we press <code>ENTER</code>, the <code>Hello, World!</code> message will be printed to the
+                    Console</p>
+            </section>
+            <section class="main-section" id="Comments">
+                <header>Comments</header>
+                <p>
+                    The syntax of comments is the same as in C++ and in many other languages:
+                </p>
                 <div class="code">
                     <pre class="prettyprint linenums">
- let a = 1;
 // a one line comment
 
 /* this is a longer,
 * multi-line comment
 */
-                 </pre>
+
+/* You can't, however, /* nest comments */ SyntaxError */
+</pre>
                 </div>
+                <p>
+                    Comments behave like whitespace and are discarded during script execution.
+                </p>
+            </section>
+            <section class="main-section" id="Variables">
+                <header>Variables</header>
+                <p>You use variables as symbolic names for values in your application. The names of variables, called
+                    identifiers, conform to certain rules.</p>
+                <p>
+                    A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent
+                    characters can also be
+                    digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z"
+                    (uppercase) and the
+                    characters "a" through "z" (lowercase).
+                </p>
+                <p>Some examples of legal names are <code>Number_hits</code>, <code>temp99</code>, <code>$credit</code>,
+                    and <code>_name</code>.</p>
+            </section>
+            <section class="main-section" id="Declaring_variables">
+                <header>Declaring variables</header>
+                <p>You can declare a variable in two ways:</p>
+                <ul>
+                    <li class="list">With the keyword <code>var</code>. For example, <code>var x = 42</code>. This
+                        syntax can be used to declare both <strong>local</strong> and <strong>global</strong> variables,
+                        depending on the <em>execution context</em>.
+                    </li>
+                    <li class="list">With the keyword <code>const</code> or <code>let</code>. For example,
+                        <code>let y = 13</code>. This syntax can be used to declare a block-scope local variable.
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="Variable_scope">
+                <header>Variable scope</header>
+                <p>When you declare a variable outside of any function, it is called a <em>global</em> variable, because it is available to any
+                other code in the current document. When you declare a variable within a function, it is called a <em>local</em> variable,
+                because it is available only within that function.</p>
+                
+                <p>JavaScript before ECMAScript 2015 does not have block statement scope; rather, a variable declared within a block is
+                local to the <em>function (or global scope)</em> that the block resides within. For example the following code will log <code>5</code>,
+                because the scope of <code>x</code> is the global context (or the function if the following codes are part of the function), not the
+                immediate <code>if</code> statement block.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+if (true) {
+    var x = 5;
+}
+console.log(x); // x is 5
+</pre>
+                </div>
+                <p>This behavior changes, when using the <code>let</code> declaration introduced in ECMAScript 2015.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+if (true) {
+    let y = 5;
+}
+console.log(y); // ReferenceError: y is not defined
+</pre>
+                </div>
+            </section>
+            <section class="main-section" id="Variable_hoisting">
+                <header>Variable hoisting</header>
+                <p>Another unusual thing about variables in JavaScript is that you can refer to a variable declared later, without getting
+                an exception. This concept is known as <strong>hoisting</strong>; variables in JavaScript are in a sense "hoisted" or lifted to the top
+                of the function or statement. However, variables that are hoisted return a value of <code>undefined</code>. So even if you declare
+                and initialize after you use or refer to this variable, it still returns <code>undefined</code>.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+/**
+* Example 1
+*/
+console.log(x === undefined); // true
+var x = 3;
+
+/**
+* Example 2
+*/
+// will return a value of undefined
+var myvar = 'my value';
+
+(function() {
+    console.log(myvar); // undefined
+    var myvar = 'local value';
+})();
+</pre>
+                </div>
+                <p>The above examples will be interpreted the same as:</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+/**
+* Example 1
+*/
+var x;
+console.log(x === undefined); // true
+x = 3;
+
+/**
+* Example 2
+*/
+var myvar = 'my value';
+
+(function() {
+    var myvar;
+    console.log(myvar); // undefined
+    myvar = 'local value';
+})();
+</pre>
+                </div>
+                <p>Because of hoisting, all <code>var</code> statements in a function should be placed as near to the top of the function as possible.
+                This best practice increases the clarity of the code.</p>
+                <p>In ECMAScript 2015, <code>let</code> and <code>const</code> <strong>are hoisted but not initialized</strong>. Referencing the variable in the block before the
+                variable declaration results in a <code>ReferenceError</code> because the variable is in a "temporal dead zone" from the start of the
+                block until the declaration is processed.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+console.log(x); // ReferenceError
+let x = 3;
+</pre>
+                </div>
+            </section>
+            <section class="main-section" id="Function_hoisting">
+                <header>Function hoisting</header>
+                <p>For functions, only the function declaration gets hoisted to the top and not the function expression.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+/* Function declaration */
+
+foo(); // "bar"
+
+function foo() {
+    console.log('bar');
+}
+
+
+/* Function expression */
+
+baz(); // TypeError: baz is not a function
+
+var baz = function() {
+    console.log('bar2');
+};
+</pre>
+                </div>
+            </section>
+            <section class="main-section" id="Global_variables">
+                <header>Global variables</header>
+                <p>Global variables are in fact properties of the global object. In web pages, the global object is <code>window</code>, so you can set
+                and access global variables using the <code>window.variable</code> syntax.</p>
+                <p>Consequently, you can access global variables declared in one window or frame from another window or frame by specifying
+                the window or frame name. For example, if a variable called <code>phoneNumber</code> is declared in a document, you can refer to this
+                variable from an iframe as <code>parent.phoneNumber</code>.</p>
+            </section>
+            <section class="main-section" id="Constants">
+                <header>Constants</header>
+                <p>You can create a read-only, named constant with the <code>const</code> keyword. The syntax of a constant identifier is the same as
+                for a variable identifier: it must start with a letter, underscore or dollar sign ($) and can contain alphabetic,
+                numeric, or underscore characters.</p>
+                <div class="code">
+    <pre class="prettyprint linenums">
+const PI = 3.14;
+</pre>
+                </div>
+                <p>A constant cannot change value through assignment or be re-declared while the script is running. It must be initialized
+                to a value.</p>
+                <p>The scope rules for constants are the same as those for <code>let</code> block-scope variables. If the <code>const</code> keyword is omitted, the
+                identifier is assumed to represent a variable.</p>
+                <p>You cannot declare a constant with the same name as a function or variable in the same scope. For example:</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+// THIS WILL CAUSE AN ERROR
+function f() {};
+const f = 5;
+
+// THIS WILL CAUSE AN ERROR TOO
+function f() {
+    const g = 5;
+    var g;
+
+    //statements
+}
+</pre>
+                </div>
+                <p>However, the properties of objects assigned to constants are not protected, so the following statement is executed
+                without problems.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+const MY_OBJECT = {'key': 'value'};
+MY_OBJECT.key = 'otherValue';
+</pre>
+                </div>
+                <p>Also, the contents of an array are not protected, so the following statement is executed without problems.</p>
+                <div class="code">
+<pre class="prettyprint linenums">
+const MY_ARRAY = ['HTML','CSS'];
+MY_ARRAY.push('JAVASCRIPT');
+console.log(MY_ARRAY); //logs ['HTML','CSS','JAVASCRIPT'];
+</pre>
+                </div>
+            </section>
+            <section class="main-section" id="Data_types">
+                <header>Data types</header>
+                <p>The latest ECMAScript standard defines eight data types: </p>
+                <ul>
+                    <li class="list"> Seven data types that are primitives:
+                        <ul>
+                            <li class="list">Boolean. <code>true</code> and <code>false</code>.</li>
+                            <li class="list">null. A special keyword denoting a null value. Because JavaScript is case-sensitive, <code>null</code> is not the same as <code>Null</code>, <code>NULL</code>,
+                            or any other variant.</li>
+                            <li class="list">undefined. A top-level property whose value is not defined.</li>
+                            <li class="list">Number. An integer or floating point number. For example: <code>42</code> or <code>3.14159</code>.</li>
+                            <li class="list">BigInt. An integer with arbitrary precision. For example: <code>9007199254740992n</code>.</li>
+                            <li class="list">String. A sequence of characters that represent a text value. For example: "Howdy"</li>
+                            <li class="list">Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>  
+                        </ul>
+                    </li>
+                    <li class="list">and Object
+                    </li>
+                </ul>
+                <p>Although these data types are relatively few, they enable you to perform useful functions with your applications.
+                <code>Objects</code> and <code>functions</code> are the other fundamental elements in the language. You can think of objects as named containers
+                for values, and functions as procedures that your application can perform</p>
+            </section>
+
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <p>
+                    The data contained in this page are a copy of part of the content on these sites below, please check
+                    the original material:
+                </p>
+                <ul>
+                    <li class="list"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                            target="_blank">MDN
+                            JavaScript Guide</a>
+                    </li>
+                    <li class="list"><a
+                            href="https://www.digitalocean.com/community/tutorials/how-to-write-your-first-javascript-program"
+                            target="_blank" s>
+                            DigitalOcean Comunity - How To Write Your First JavaScript Program</a>
+
+                    </li>
+                </ul>
             </section>
         </div>
     </main>
@@ -91,45 +354,4 @@ color: red;
 
 </html>
 
-<!--
-
-User Story #5: The .main-section elements should contain at least 10 p elements 
-total (not each).
-
-User Story #6: The .main-section elements should contain at least 5 code elements 
-total (not each).
-
-User Story #7: The .main-section elements should contain at least 5 li items 
-total (not each).
-
-User Story #8: I can see a nav element with a corresponding id="navbar".
-
-User Story #9: The navbar element should contain one header element which 
-contains text that describes the topic of the technical documentation.
-
-User Story #10: Additionally, the navbar should contain link (a) elements 
-with the class of nav-link. There should be one for every element with the 
-class main-section.
-
-User Story #11: The header element in the navbar must come before any link 
-(a) elements in the navbar.
-
-User Story #12: Each element with the class of nav-link should contain text 
-that corresponds to the header text within each section (e.g. if you have a 
-"Hello world" section/header, your navbar should have an element which 
-contains the text "Hello world").
-
-User Story #13: When I click on a navbar element, the page should navigate 
-to the corresponding section of the main-doc element (e.g. If I click on a 
-nav-link element that contains the text "Hello world", the page navigates 
-to a section element that has that id and contains the corresponding header.
-
-User Story #14: On regular sized devices (laptops, desktops), the element 
-with id="navbar" should be shown on the left side of the screen and should 
-always be visible to the user.
-
-User Story #15: My Technical Documentation page should use at least one 
-media query.
-
--->
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
